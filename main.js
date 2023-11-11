@@ -1,0 +1,108 @@
+class Producto {
+    constructor(nombre, precio, imagen) {
+        this.nombre = nombre;
+        this.precio = precio;
+        this.imagen = imagen;
+    }
+}
+
+const productos = [
+    new Producto('Procesador Intel i7', 1200000, 'Intel.jpg'),
+    new Producto('Tarjeta Gráfica NVIDIA GTX 3080', 3500000, '3080.jpg'),
+    new Producto('Placa Madre ASUS ROG Strix', 800000, 'h525.png'),
+    new Producto('Memoria RAM Corsair 16GB DDR4', 400000, 'ram.webp'),
+    new Producto('Disco Duro SSD Samsung 1TB', 600000, 'duro.webp'),
+    new Producto('Teclado Mecánico Logitech G Pro', 500000, 'teclado.png'),
+    new Producto('Mouse Inalámbrico Razer DeathAdder', 300000, 'mouse.jpg'),
+    new Producto('Monitor Curvo Acer 27 pulgadas', 1200000, 'monitor.webp'),
+    new Producto('Fuente de Poder EVGA 750W', 450000, 'fuente.jpg'),
+    new Producto('Caja de PC NZXT H510', 700000, 'caja.jpg'),
+    new Producto('Ventiladores RGB Corsair', 250000, 'sopla.webp'),
+    new Producto('Webcam Logitech C920 HD', 80000, 'camara.webp'),
+];
+
+let carrito = [];
+
+function agregarAlCarrito(producto) {
+    carrito.push(producto);
+    actualizarCarrito();
+}
+
+function eliminarProducto(index) {
+    const productoEliminado = carrito.splice(index, 1)[0];
+    actualizarCarrito();
+}
+
+function vaciarCarrito() {
+    carrito = [];
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const cartList = document.getElementById('cart-list');
+    const cartTotal = document.getElementById('cart-total');
+
+    cartList.innerHTML = '';
+
+    let total = 0;
+
+    carrito.forEach((item, index) => {
+        const listItem = document.createElement('li');
+        listItem.textContent = `${item.nombre} - $${item.precio} COP`;
+
+        const btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.addEventListener('click', () => {
+            eliminarProducto(index);
+        });
+
+        listItem.appendChild(btnEliminar);
+        cartList.appendChild(listItem);
+
+        total += item.precio;
+    });
+
+    cartTotal.textContent = total;
+}
+
+function crearCartas() {
+    const productCards = document.querySelector('.product-cards');
+
+    productos.forEach(producto => {
+        const card = crearCarta(producto);
+        productCards.appendChild(card);
+    });
+}
+
+function crearCarta(producto) {
+    const card = document.createElement('div');
+    card.classList.add('product-card');
+
+    const img = document.createElement('img');
+    img.src = producto.imagen;
+    img.alt = producto.nombre;
+
+    const nombre = document.createElement('h3');
+    nombre.textContent = producto.nombre;
+
+    const precio = document.createElement('p');
+    precio.textContent = `Precio: $${producto.precio} COP`;
+
+    const btnAgregar = document.createElement('button');
+    btnAgregar.textContent = 'Agregar al carrito';
+    btnAgregar.addEventListener('click', () => {
+        agregarAlCarrito(producto);
+    });
+
+    card.appendChild(img);
+    card.appendChild(nombre);
+    card.appendChild(precio);
+    card.appendChild(btnAgregar);
+
+    return card;
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    crearCartas();
+    actualizarCarrito();
+});
