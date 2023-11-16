@@ -18,13 +18,14 @@ const productos = [
     new Producto('Fuente de Poder EVGA 750W', 450000, 'fuente.jpg'),
     new Producto('Caja de PC NZXT H510', 700000, 'caja.jpg'),
     new Producto('Ventiladores RGB Corsair', 250000, 'sopla.webp'),
-    new Producto('Webcam Logitech C920 HD', 80000, 'camara.webp'),
+    new Producto('Webcam Logitech C920 HD', 80000, ''),
 ];
 
 let carrito = [];
 
 function agregarAlCarrito(producto) {
-    carrito.push(producto);
+    const productoEnCarrito = new Producto(producto.nombre, parseFloat(producto.precio), producto.imagen);
+    carrito.push(productoEnCarrito);
     actualizarCarrito();
 }
 
@@ -48,7 +49,7 @@ function actualizarCarrito() {
 
     carrito.forEach((item, index) => {
         const listItem = document.createElement('li');
-        listItem.textContent = `${item.nombre} - $${item.precio} COP`;
+        listItem.textContent = `${item.nombre} - ${formatoMoneda(item.precio)}`;
 
         const btnEliminar = document.createElement('button');
         btnEliminar.textContent = 'Eliminar';
@@ -62,7 +63,11 @@ function actualizarCarrito() {
         total += item.precio;
     });
 
-    cartTotal.textContent = total;
+    cartTotal.textContent = `Total: ${formatoMoneda(total)}`;
+}
+
+function formatoMoneda(valor) {
+    return new Intl.NumberFormat('es-CO', { style: 'currency', currency: 'COP' }).format(valor);
 }
 
 function crearCartas() {
@@ -86,7 +91,7 @@ function crearCarta(producto) {
     nombre.textContent = producto.nombre;
 
     const precio = document.createElement('p');
-    precio.textContent = `Precio: $${producto.precio} COP`;
+    precio.textContent = `Precio: ${formatoMoneda(parseFloat(producto.precio))} COP`;
 
     const btnAgregar = document.createElement('button');
     btnAgregar.textContent = 'Agregar al carrito';
