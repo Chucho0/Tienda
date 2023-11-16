@@ -7,17 +7,17 @@ class Producto {
 }
 
 const productos = [
-    new Producto('Procesador Intel i7', 1200000, 'Intel.jpg'),
-    new Producto('Tarjeta Gráfica NVIDIA GTX 3080', 3500000, '3080.jpg'),
-    new Producto('Placa Madre ASUS ROG Strix', 800000, 'h525.png'),
-    new Producto('Memoria RAM Corsair 16GB DDR4', 400000, 'ram.webp'),
-    new Producto('Disco Duro SSD Samsung 1TB', 600000, 'duro.webp'),
-    new Producto('Teclado Mecánico Logitech G Pro', 500000, 'teclado.png'),
-    new Producto('Mouse Inalámbrico Razer DeathAdder', 300000, 'mouse.jpg'),
-    new Producto('Monitor Curvo Acer 27 pulgadas', 1200000, 'monitor.webp'),
-    new Producto('Fuente de Poder EVGA 750W', 450000, 'fuente.jpg'),
-    new Producto('Caja de PC NZXT H510', 700000, 'caja.jpg'),
-    new Producto('Ventiladores RGB Corsair', 250000, 'sopla.webp'),
+    new Producto('Procesador Intel i7', 1200000, 'img/Intel.jpg'),
+    new Producto('Tarjeta Gráfica NVIDIA GTX 3080', 3500000, 'img/3080.jpg'),
+    new Producto('Placa Madre ASUS ROG Strix', 800000, 'img/h525.png'),
+    new Producto('Memoria RAM Corsair 16GB DDR4', 400000, 'img/ram.webp'),
+    new Producto('Disco Duro SSD Samsung 1TB', 600000, 'img/duro.webp'),
+    new Producto('Teclado Mecánico Logitech G Pro', 500000, 'img/teclado.png'),
+    new Producto('Mouse Inalámbrico Razer DeathAdder', 300000, 'img/mouse.jpg'),
+    new Producto('Monitor Curvo Acer 27 pulgadas', 1200000, 'img/monitor.webp'),
+    new Producto('Fuente de Poder EVGA 750W', 450000, 'img/fuente.jpg'),
+    new Producto('Caja de PC NZXT H510', 700000, 'img/caja.jpg'),
+    new Producto('Ventiladores RGB Corsair', 250000, 'img/sopla.webp'),
     new Producto('Webcam Logitech C920 HD', 80000, ''),
 ];
 
