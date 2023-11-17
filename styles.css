@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
 }
 
 main {
@@ -22,14 +23,10 @@ main {
     margin: 20px;
     padding: 20px;
     border: 1px solid #000000;
-    background-color: #c0c0c0;
+    background-color: rgb(184, 220, 226);
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     text-align: center;
-}
-
-.product-card:hover {
-    transform: scale(1.05);
 }
 
 .product-card img {
@@ -47,7 +44,7 @@ main {
 }
 
 .product-card button {
-    background-color: green;
+    background-color: rgb(104, 168, 104);
     color: #fff;
     padding: 10px;
     border: none;
@@ -57,8 +54,8 @@ main {
 
 .cart {
     background-color: #ffffff;
-    color: #b4b2b2;
-    padding: 20px;
+    color: rgb(2, 39, 49);
+    padding: 10px;
     position: fixed;
     top: 50%;
     right: 0;
@@ -75,9 +72,8 @@ main {
 }
 
 #cart img {
-    width: 30px;
-    height: 30px;
-    margin-right: 10px;
+    width: 18px;
+    height: 18px;
 }
 
 .header{
@@ -87,6 +83,8 @@ main {
     background-color: #000000;
     color: #ffffff;
     padding: 5px 5%;
+    width: 90%;
+    position: fixed;
 }
 
 .cont_nombre{
@@ -104,12 +102,29 @@ main {
 
 .img_principal{
     width: 100%;
+    margin-top: 4%;
 }
 
 footer{
     display: flex;
-    padding: 10px 5%;
-    width: 100%;
+    justify-content: center;
+    padding: 10px 10%;
     background-color: #000000;
     color: #ffffff;
+}
+
+.cont_contacto_footer, .cont_correo, .cont_direccion{
+    width: 33%;
+    display: flex;
+    justify-content: center;
+}
+
+a{
+    color: #ffffff;
+    text-decoration: none;
+}
+
+li{
+    margin: 10px 0;
+    list-style-type: none;
 }

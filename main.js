@@ -18,7 +18,7 @@ const productos = [
     new Producto('Fuente de Poder EVGA 750W', 450000, 'img/fuente.jpg'),
     new Producto('Caja de PC NZXT H510', 700000, 'img/caja.jpg'),
     new Producto('Ventiladores RGB Corsair', 250000, 'img/sopla.webp'),
-    new Producto('Webcam Logitech C920 HD', 80000, ''),
+    new Producto('Webcam Logitech C920 HD', 80000, 'img/foto.webp'),
 ];
 
 let carrito = [];
@@ -63,7 +63,7 @@ function actualizarCarrito() {
         total += item.precio;
     });
 
-    cartTotal.textContent = `Total: ${formatoMoneda(total)}`;
+    cartTotal.textContent = `${formatoMoneda(total)}`;
 }
 
 function formatoMoneda(valor) {
