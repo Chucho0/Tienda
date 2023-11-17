@@ -98,4 +98,18 @@ main {
 .cont_inicio, .cont_productos, .cont_contacto{
     width: 20%;
     font-size: 22px;
+    display: flex;
+    justify-content: center;
+}
+
+.img_principal{
+    width: 100%;
+}
+
+footer{
+    display: flex;
+    padding: 10px 5%;
+    width: 100%;
+    background-color: #000000;
+    color: #ffffff;
 }
