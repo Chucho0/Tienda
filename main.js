@@ -111,3 +111,14 @@ document.addEventListener('DOMContentLoaded', () => {
     crearCartas();
     actualizarCarrito();
 });
+
+function mostrarBar(){
+    let contenedor = document.querySelector(".dropdown")
+    let checkbox = document.querySelector("#check")
+
+    if(checkbox.checked){
+        contenedor.style.right = "0"
+    }else{
+        contenedor.style.right = "-100%"
+    }
+}
